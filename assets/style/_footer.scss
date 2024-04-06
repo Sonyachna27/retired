@@ -1,0 +1,195 @@
+.footer{
+    background-color: #1e1530;
+    padding: 40px 0;
+   color: $--white-text;
+   font-family: 'Montserrat';
+    &__container{
+        &-top{
+            display: flex;
+            gap: 25px;
+            margin-bottom: 40px;
+            justify-content: space-between;
+            @media screen and (max-width:1023px) {
+                flex-direction: column;
+                align-items: center;
+            }
+            .menu{
+                display: flex;
+                max-width: 100%;
+                width: 100%;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 25px;
+                @media screen and (max-width:1023px) {
+                    flex-direction: column;
+                }
+                & li{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 11px;
+                    max-width: 210px;
+                    width: 100%;
+                    @media screen and (max-width:1023px) {
+                        max-width: 100%;
+                    }
+                }
+                & li:not(.sub-menu li) {
+                    & > span,
+                    & > a{
+                        font-weight: 700;
+                        line-height: 24px;
+                        
+                    }
+                    & > a{
+                        transition: .3s linear;
+                        position: relative;
+                        &:after{
+                                content: '';
+                                width: 0;
+                                height: 1px;
+                                background-color: $--primary-btn;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                transition: .3s linear;
+                            } 
+                            &:hover{
+                                color: $--primary-btn;
+                                &:after{
+                                    width: 100%;
+                                }
+                            
+                        }
+                    }
+                }
+                & .sub-menu{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    & li{
+                        & a{
+                            position: relative;
+                        &:after{
+                            content: '';
+                            width: 0;
+                            height: 1px;
+                            background-color: $--white-text;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            transition: .3s linear;
+                        } 
+                        &:hover{
+                            &:after{
+                                width: 100%;
+                            }
+                        }
+                        }
+                    }
+                }
+              
+                & li:has(.sub-menu) {
+                    position: relative;
+                    width: 100%;
+                 
+                @media screen and (max-width:1023px) {
+                    & span {
+                        text-decoration: underline;
+                    }
+                    &:after{
+                        transition: .3s linear;
+                        content: '';
+                          position: absolute;
+                          width: 25px;
+                          height: 25px;
+                         background-color:  $--primary-btn;
+                        background-image: url(../images/arr_down.svg);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        border-radius: 50%;
+                        left: inherit;
+                        right: 0;
+                        // transform: translate(100%, 50%);
+                    } 
+                    & .sub-menu{
+                        opacity: 0;
+                        max-height: 0;
+                        overflow: hidden;            
+                        transition: all .3s linear;
+                        overflow: hidden;
+                        gap: 10px;
+                        background-color: $--primary-btn;
+                        width: 100%;
+                        padding:  0;
+                        box-shadow: none;
+                        position: relative;
+                        top: 0;
+                      
+                    }
+                    &.show  > .sub-menu{
+                        display: flex;
+                        flex-direction: column;
+                        max-height: 100vh;
+                        opacity: 1;
+                        overflow: visible;
+                        padding: 10px 0px;
+                        background-color: inherit;
+                        height: auto;
+                       
+                    }
+                }
+
+               }  
+               
+            }
+            &-contacts{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                max-width: 276px;
+                width: 100%;
+                text-wrap: balance;
+                @media screen and (max-width:1023px) {
+                    max-width: 100%;
+                }
+               & span{
+                font-weight: 700;
+                line-height: 24px;
+               }
+                & a:not(.btn){
+                    transition: .3s linear;
+                    line-height: 200%;
+                    position: relative;
+                    &:after{
+                        content: '';
+                        width: 0;
+                        height: 1px;
+                        background-color: $--white-text;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        transition: .3s linear;
+                    }
+                    &:hover{
+                        &:after{
+                            width: 100%;
+                        }
+                    }
+                }
+              & a[href^="mailto:"] {
+                    color: $--primary-btn;
+                    position: relative;
+                   &:after{
+                    background-color: $--primary-btn;
+                   }
+                }
+                & .btn{
+                    max-width: 100%;
+                }
+            }
+        }
+        &-copy{
+            text-align: left;
+        }
+    }
+}
