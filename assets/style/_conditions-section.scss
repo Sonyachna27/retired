@@ -1,0 +1,36 @@
+.conditions{
+    &__container{
+        &-wrap{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px 20px;
+            align-items: stretch;
+            @media screen and (max-width:1023px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @media screen and (max-width:767px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media screen and (max-width:550px) {
+               display: flex;
+               flex-direction: column;
+            }
+            &-item{
+                display: flex;
+                align-items: end;
+                gap: 20px;
+                min-height: 80px;
+                @media screen and (max-width:367px) {
+                    word-break: break-all;
+                }
+                & img{
+                    max-width: 50px;
+                    max-height: 50px;
+                    width: 100%;
+                    height: 100%;
+
+                }
+            }
+        }
+    }
+}
