@@ -29,8 +29,22 @@ body{
 h1{
 font-size: 50px;
 font-weight: 500;
+& span{
+    font: inherit;
 }
-
+@media screen and (max-width:550px) {
+    font-size: 32px;
+}
+}
+h2{
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 700;
+    text-transform: uppercase;
+    @media screen and (max-width:550px) {
+        font-size: 24px;
+    }
+}
 
 .btn{
     display: flex;
@@ -52,4 +66,21 @@ font-weight: 500;
         background-color: $--hover-color;
     }
 }
-
+.title-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 35px;
+    & a{
+        display: block;
+        font-size: 13px;
+        color: $--hover-color;
+        line-height: 18px;
+        font-style: normal;
+    }
+    @media  screen and (max-width:767px) {
+        flex-direction: column;
+        text-align: center;
+    }
+}
