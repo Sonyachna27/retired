@@ -18,6 +18,21 @@
   src: url(../fonts/Montserrat-Bold.ttf);
   font-weight: 700;
 }
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto-Light.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto-Bold.ttf);
+  font-weight: 700;
+}
 /* reset */
 *,
 *::before,
@@ -115,6 +130,15 @@ body {
   }
 }
 
+.mb-s {
+  margin-bottom: 60px;
+}
+@media screen and (max-width: 767px) {
+  .mb-s {
+    margin-bottom: 40px;
+  }
+}
+
 h1 {
   font-size: 50px;
   font-weight: 500;
@@ -179,6 +203,15 @@ h2 {
   .title-row {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+.p-m {
+  padding: 60px 0;
+}
+@media screen and (max-width: 767px) {
+  .p-m {
+    padding: 40px 0;
   }
 }
 
@@ -699,6 +732,7 @@ h2 {
     border-radius: 50%;
     left: inherit;
     right: 0;
+    transition: 0.3s linear;
   }
   .footer__container-top .menu li:has(.sub-menu) .sub-menu {
     opacity: 0;
@@ -707,12 +741,14 @@ h2 {
     transition: all 0.3s linear;
     overflow: hidden;
     gap: 10px;
-    background-color: rgb(250, 101, 49);
     width: 100%;
     padding: 0;
     box-shadow: none;
     position: relative;
     top: 0;
+  }
+  .footer__container-top .menu li:has(.sub-menu).show:after {
+    transform: rotate(180deg);
   }
   .footer__container-top .menu li:has(.sub-menu).show > .sub-menu {
     display: flex;
@@ -776,12 +812,25 @@ h2 {
 
 .main {
   background: url(../images/ravi-patel-VMGAbeeJTKo-unsplash.jpg) center center/cover no-repeat;
-  background: #889b59;
+  position: relative;
+}
+.main:before {
+  z-index: 0;
+  opacity: 0.5;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #4f4f4f;
+  width: 100%;
+  height: 100%;
 }
 .main__container {
   display: flex;
   gap: 10px;
   color: #ffffff;
+  position: relative;
+  z-index: 1;
 }
 @media screen and (max-width: 1023px) {
   .main__container {
@@ -839,6 +888,7 @@ h2 {
   justify-content: center;
   border-radius: 50%;
   background-color: rgb(117, 137, 69);
+  background-color: rgb(250, 101, 49);
 }
 .main__container-content-advantages div div img {
   max-width: 45px;
@@ -1028,6 +1078,7 @@ h2 {
   border-radius: inherit;
   -o-object-fit: cover;
      object-fit: cover;
+  height: 100%;
 }
 @media screen and (max-width: 1023px) {
   .location__container-list-item-link img {
@@ -1062,6 +1113,11 @@ h2 {
   border-top: 0;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
+}
+@media screen and (max-width: 1100px) {
+  .location__container-list-item-content {
+    padding: 20px 10px;
+  }
 }
 @media screen and (max-width: 1023px) {
   .location__container-list-item-content {
@@ -1263,21 +1319,28 @@ h2 {
   height: 100%;
 }
 
+.reason {
+  background-color: #F8F9FB;
+  font-family: "Roboto";
+}
+.reason__container {
+  font-weight: 300;
+}
 .reason__container-table {
-  max-width: 100%;
+  margin-bottom: 10px;
 }
 @media screen and (max-width: 550px) {
   .reason__container-table {
     overflow: hidden;
     overflow-x: auto;
-    width: 100%;
+    min-width: 100%;
+    white-space: nowrap;
   }
 }
 .reason__container-table table {
   max-width: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  border-collapse: collapse;
 }
 .reason__container-table table tr {
   display: flex;
@@ -1313,10 +1376,260 @@ h2 {
 }
 @media screen and (max-width: 550px) {
   .reason__container-table table tr td:not(:nth-of-type(1)), .reason__container-table table tr th:not(:nth-of-type(1)) {
-    min-width: 120px;
+    min-width: 130px;
   }
 }
 .reason__container-table table thead {
-  background-color: #a2cfb5;
+  background-color: #9B78D7;
   width: auto;
+  color: #ffffff;
+}
+.reason__container-text p {
+  font-size: 19px;
+  margin-bottom: 10px;
+  line-height: 150%;
+}
+
+.schedule {
+  background-color: #F8F9FB;
+  font-family: "Roboto";
+}
+.schedule__container-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px 30px;
+  align-items: stretch;
+}
+@media screen and (max-width: 1023px) {
+  .schedule__container-wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 767px) {
+  .schedule__container-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 550px) {
+  .schedule__container-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.schedule__container-wrap-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  min-height: 110px;
+}
+.schedule__container-wrap-item span {
+  display: block;
+}
+.schedule__container-wrap-item .interval {
+  color: #56A569;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.cost {
+  color: #ffffff;
+  padding: 60px 0;
+  background: #0789CA url("../images/calcform_bg.png") 50% 50% no-repeat;
+}
+@media screen and (max-width: 550px) {
+  .cost {
+    background: #0789CA;
+  }
+}
+.cost__container-title {
+  justify-content: center;
+}
+.cost__container-form {
+  display: flex;
+  flex-direction: column;
+}
+.cost__container-form p {
+  text-align: center;
+  line-height: 1.6em;
+  font-weight: 300;
+}
+.cost__container-form form {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 550px) {
+  .cost__container-form form {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.cost__container-form form input {
+  outline: none;
+}
+.cost__container-form form .input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+.cost__container-form form .input-wrap .input-title {
+  font-weight: 700;
+  font-size: 25px;
+}
+.cost__container-form form .age {
+  width: 22%;
+}
+.cost__container-form form .age input {
+  max-width: 100px;
+  width: 100%;
+  text-align: center;
+  height: auto;
+  border: 0;
+  box-shadow: inset 0px 4px 4px #D7D7E3;
+}
+.cost__container-form form .sex {
+  display: inline-block;
+  width: 24%;
+  vertical-align: top;
+}
+.cost__container-form form .sex .input-title {
+  margin-bottom: 20px;
+}
+.cost__container-form form .sex label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin: 0 10px 0 0;
+  padding: 10px;
+  border: 1px solid rgba(205, 205, 239, 0.5);
+  border-radius: 5px;
+}
+.cost__container-form form .sex label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.cost__container-form form .sex label img {
+  z-index: 5;
+  position: relative;
+  min-width: 50px;
+  max-width: 70px;
+  width: 100%;
+}
+.cost__container-form form .input-wrap.sex label input:checked ~ .check {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 5px;
+  background: #38AEE9;
+  z-index: 1;
+}
+.cost__container-form form .state {
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 48%;
+}
+.cost__container-form form .state .input-title {
+  width: 100%;
+}
+@media screen and (max-width: 550px) {
+  .cost__container-form form .state .input-title {
+    text-align: center;
+  }
+}
+.cost__container-form form .state label {
+  position: relative;
+  width: 47%;
+  display: inline-block;
+  padding-left: 30px;
+}
+@media screen and (max-width: 550px) {
+  .cost__container-form form .state label {
+    text-align: center;
+    width: 100%;
+  }
+}
+.cost__container-form form .state label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  margin: 4px 0 0;
+  z-index: 1;
+}
+.cost__container-form form .state .check-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border: 0;
+  box-shadow: inset 0px 4px 4px #D7D7E3;
+  border-radius: 5px;
+  z-index: 0;
+  cursor: pointer;
+}
+.cost__container-form form .state .check-box::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #000;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.cost__container-form form .state .state label input[type=checkbox]:checked + label .check-box {
+  background-color: #000;
+}
+.cost__container-form form .state .state label input:checked ~ .check-box:after {
+  background-color: #000;
+  display: block;
+}
+.cost__container-form form .cost-input {
+  width: 100%;
+  margin: 0 auto;
+}
+.cost__container-form form .cost-input input {
+  cursor: pointer;
+  border: none;
+  margin: 0 auto;
+  border-radius: 43px;
+  text-transform: uppercase;
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.state label input:checked + .check-box {
+  background: #38AEE9;
+  box-shadow: none;
+}
+
+.state label input:checked ~ .check-box:after {
+  border-color: #fff;
+  top: 6px;
+  left: 10px;
+  display: block;
+}
+
+.choice {
+  padding: 40px 0;
+  background-color: #ffffff;
+}
+.choice__container-title {
+  text-align: center;
+  font-size: 26px;
+}
+.choice__container-text p {
+  font-size: 16px;
+  color: #000000;
+  line-height: 25px;
+  margin-bottom: 16px;
 }/*# sourceMappingURL=style.css.map */

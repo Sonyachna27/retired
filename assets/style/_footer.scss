@@ -109,7 +109,7 @@
                         border-radius: 50%;
                         left: inherit;
                         right: 0;
-                        // transform: translate(100%, 50%);
+                        transition: .3s linear;
                     } 
                     & .sub-menu{
                         opacity: 0;
@@ -118,13 +118,17 @@
                         transition: all .3s linear;
                         overflow: hidden;
                         gap: 10px;
-                        background-color: $--primary-btn;
                         width: 100%;
                         padding:  0;
                         box-shadow: none;
                         position: relative;
                         top: 0;
                       
+                    }
+                    &.show{
+                        &:after{
+                            transform: rotate(180deg);
+                        }
                     }
                     &.show  > .sub-menu{
                         display: flex;

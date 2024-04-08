@@ -1,11 +1,24 @@
 .main{
     
     background: url(../images/ravi-patel-VMGAbeeJTKo-unsplash.jpg) center center / cover no-repeat;
-    background: #889b59;
+    position: relative;
+    &:before{
+        z-index: 0;
+        opacity: .5;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $--light-gray-text;
+        width: 100%;
+        height: 100%;
+    }
     &__container{
         display: flex;
         gap: 10px;
         color: $--white-text;
+        position: relative;
+        z-index: 1;
         @media screen and (max-width:1023px) {
             flex-direction: column;
             gap: 40px;
@@ -53,6 +66,7 @@
                     justify-content: center;
                     border-radius: 50%;
                     background-color: rgb(117, 137, 69);
+                    background-color: $--primary-btn;
                     & img{
                         max-width: 45px;
                     }
