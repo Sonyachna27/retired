@@ -10,6 +10,7 @@ $--light-text: #ebebeb;
 $--border-color:#f2f2f2;
 $--table-color:#a2cfb5;
 $--table-row-color:#efefef;
+$--bg-color:#F8F9FB;
 body{
     
     font-family: 'PT Sans';
@@ -26,6 +27,12 @@ body{
     margin-bottom: 120px;
     @media screen and (max-width:767px) {
         margin-bottom: 60px;
+    }
+}
+.mb-s{
+    margin-bottom: 60px;
+    @media screen and (max-width:767px) {
+        margin-bottom: 40px;
     }
 }
 h1{
@@ -84,5 +91,11 @@ h2{
     @media  screen and (max-width:767px) {
         flex-direction: column;
         text-align: center;
+    }
+}
+.p-m{
+    padding: 60px 0;
+    @media screen and (max-width:767px) {
+        padding: 40px 0;
     }
 }

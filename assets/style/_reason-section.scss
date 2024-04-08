@@ -1,21 +1,23 @@
 .reason{
+    background-color: $--bg-color; 
+    font-family: 'Roboto';
     &__container{
+        font-weight: 300;
         &-table{
-            max-width: 100%;
+            margin-bottom: 10px;
             @media screen and (max-width:550px) {
                 overflow: hidden;
                 overflow-x: auto;
-                width: 100%;
+                min-width: 100%;
+                white-space: nowrap;
             }
             & table{
                 max-width: 100%;
                 width: 100%;
-                display: flex;
-                flex-direction: column;
-                
+                border-collapse: collapse;
+               
                 & tr{
                     display: flex;
-                    
                     &:nth-child(even) {
                         background-color:$--table-row-color; 
                     }
@@ -44,18 +46,25 @@
                             width: 13%;
                             min-width: 140px;
                             @media screen and (max-width:550px) {
-                                min-width: 120px;
+                                min-width: 130px;
                             }
                         }
                     }
                    
                 }
                 & thead{
-                    background-color: $--table-color;
+                    background-color: $--hover-color;
                     width: auto;
+                    color: $--white-text;
                 }
             }
         }
-        
+        &-text{
+            & p{
+                font-size: 19px;
+                margin-bottom: 10px;
+                line-height: 150%;
+            }
+        }
     }
 }
