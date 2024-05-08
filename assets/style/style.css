@@ -1712,6 +1712,8 @@ h2 {
 .pension__container_info-slider .pensionSlider .swiper-slide {
   border-radius: 10px;
   cursor: pointer;
+  min-height: 300px;
+  height: 100%;
   aspect-ratio: 1/1;
 }
 .pension__container_info-slider .pensionSlider .swiper-slide img {
