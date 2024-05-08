@@ -1,101 +1,124 @@
 $--white-text: #ffffff;
 
-$--primary-btn:rgb(250, 101, 49);
-$--hover-color:#9B78D7;
-$--light-btn:#ebe4f7;
-$--light-gray-text:#BCBCBC;
+$--primary-btn: rgb(250, 101, 49);
+$--hover-color: #9b78d7;
+$--light-btn: #ebe4f7;
+$--light-gray-text: #bcbcbc;
 $--gray-text: #333;
-$--light-gray-text:#4f4f4f;
+$--light-gray-text: #4f4f4f;
 $--light-text: #ebebeb;
-$--border-color:#f2f2f2;
-$--table-color:#a2cfb5;
-$--table-row-color:#efefef;
-$--bg-color:#F8F9FB;
-body{
-    
-    font-family: 'PT Sans';
-    font-weight: 400;
-    font-size: 16px;
+$--border-color: #f2f2f2;
+$--table-color: #a2cfb5;
+$--table-row-color: #efefef;
+$--bg-color: #f8f9fb;
+$--powder-bg-color: #f3f1ec;
+$--light-bg-color: rgb(248, 248, 248);
+body {
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-size: 16px;
 }
-.container{
-    padding: 0 15px;
-    margin: 0 auto;
-    max-width: 1170px;
-    width: 100%;
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 1170px;
+  width: 100%;
 }
-.mb-m{
-    margin-bottom: 120px;
-    @media screen and (max-width:767px) {
-        margin-bottom: 60px;
-    }
-}
-.mb-s{
+.mb-m {
+  margin-bottom: 120px;
+  @media screen and (max-width: 767px) {
     margin-bottom: 60px;
-    @media screen and (max-width:767px) {
-        margin-bottom: 40px;
-    }
+  }
 }
-h1{
-font-size: 50px;
-font-weight: 500;
-& span{
+.mb-s {
+  margin-bottom: 60px;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+}
+h1 {
+  font-size: 50px;
+  font-weight: 500;
+  & span {
     font: inherit;
-}
-@media screen and (max-width:550px) {
+  }
+  @media screen and (max-width: 550px) {
     font-size: 32px;
+  }
 }
-}
-h2{
-    font-size: 32px;
-    line-height: 42px;
-    font-weight: 700;
-    text-transform: uppercase;
-    @media screen and (max-width:550px) {
-        font-size: 24px;
-    }
+h2 {
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 700;
+  text-transform: uppercase;
+  @media screen and (max-width: 550px) {
+    font-size: 24px;
+  }
 }
 
-.btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 202px;
-    width: 100%;
-    text-decoration: none;
-    position: relative;
-    border-radius: 10px;
-    background-color: $--primary-btn;
-    line-height: 100%;
-    padding: 10px 15px;
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 202px;
+  width: 100%;
+  text-decoration: none;
+  position: relative;
+  border-radius: 10px;
+  background-color: $--primary-btn;
+  line-height: 100%;
+  padding: 10px 15px;
+  text-align: center;
+  color: $--white-text;
+  font-weight: 700;
+  transition: 0.3s linear;
+  &:hover {
+    background-color: $--hover-color;
+  }
+}
+.btn_hover {
+  background-color: $--hover-color;
+}
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 35px;
+  & a {
+    display: block;
+    font-size: 13px;
+    color: $--hover-color;
+    line-height: 18px;
+    font-style: normal;
+  }
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
     text-align: center;
-    color: $--white-text;
-    font-weight: 700;
-    transition: .3s linear;
-    &:hover{
-        background-color: $--hover-color;
-    }
+  }
 }
-.title-row{
+.p-m {
+  padding: 60px 0;
+  @media screen and (max-width: 767px) {
+    padding: 40px 0;
+  }
+}
+.breadcrumbs {
+  padding: 5px 0;
+  background-color: $--powder-bg-color;
+  color: #b0a48a;
+  margin-bottom: 30px;
+  &__wrap {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 35px;
-    & a{
-        display: block;
-        font-size: 13px;
-        color: $--hover-color;
-        line-height: 18px;
-        font-style: normal;
-    }
-    @media  screen and (max-width:767px) {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-.p-m{
-    padding: 60px 0;
-    @media screen and (max-width:767px) {
-        padding: 40px 0;
-    }
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  & a {
+    cursor: pointer;
+  }
+  & img {
+    max-width: 18px;
+    width: 100%;
+  }
 }

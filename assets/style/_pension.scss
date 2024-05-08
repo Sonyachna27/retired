@@ -1,0 +1,204 @@
+.pension {
+  &__container {
+    & h1 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    &_info {
+      margin-bottom: 24px;
+      display: flex;
+      gap: 30px;
+      @media screen and (max-width: 1023px) {
+        flex-direction: column;
+      }
+      &-slider {
+        display: flex;
+        gap: 20px;
+        height: auto;
+        max-width: 50%;
+        width: 100%;
+        @media screen and (max-width: 1023px) {
+          max-width: 100%;
+        }
+
+        .pensionSlider {
+          max-width: 437px;
+          height: 100%;
+          position: relative;
+
+          @media screen and (max-width: 1023px) {
+            max-width: calc(100% - 25px - 25%);
+          }
+          & .swiper-slide {
+            border-radius: 10px;
+            cursor: pointer;
+            height: auto;
+
+            & img {
+              border-radius: inherit;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+        .pensionSliderRight {
+          position: relative;
+          padding: 30px 0;
+          min-width: 16%;
+          width: 100%;
+          max-width: 25%;
+          flex-direction: column;
+          & .swiper-slide {
+            max-width: 100%;
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            height: auto;
+            filter: blur(0.5px);
+
+            & img {
+              max-width: 100%;
+              width: 100%;
+              border-radius: inherit;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .pensionSliderRight-button-next,
+          .pensionSliderRight-button-prev {
+            position: absolute;
+            left: 35%;
+            width: 24px;
+            height: 24px;
+            background: url(../images/chevron-up-circle-svgrepo-com.svg) center
+              center / cover no-repeat;
+            border-radius: 12px;
+            cursor: pointer;
+            z-index: 2;
+            background-color: #fff;
+            border: 1px solid #c4b99e;
+            transition: 0.3s linear;
+            &:hover {
+              background: url(../images/chevron-up-circle-svgrepo-com-white.svg)
+                center center / cover no-repeat;
+              background-color: #c4b99e;
+            }
+          }
+          .pensionSliderRight-button-next {
+            bottom: 0;
+            top: inherit;
+          }
+          .pensionSliderRight-button-prev {
+            bottom: inherit;
+            top: 0;
+            transform: rotate(180deg);
+          }
+        }
+      }
+      &-descr {
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        &-address {
+          display: flex;
+          align-items: center;
+
+          gap: 5px;
+          border-radius: 10px;
+          background-color: $--light-bg-color;
+          padding: 10px 40px 10px 10px;
+          color: $--light-gray-text;
+          margin-bottom: 15px;
+          & svg {
+            max-width: 24px;
+            min-width: 15px;
+            min-height: 24px;
+          }
+          & span {
+            // display: flex;
+            // align-items: center;
+            // gap: 10px;
+
+            & a:not([class]) {
+              color: $--primary-btn;
+              text-decoration: underline;
+              transition: 0.3s linear;
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+          &-link {
+            color: $--light-gray-text;
+            font-size: 24px;
+            line-height: 36px;
+          }
+        }
+        &-rating {
+          display: flex;
+          gap: 10px;
+          place-items: center center;
+          margin-bottom: 15px;
+          & .stars {
+            & svg {
+              max-width: 25px;
+              max-height: 25px;
+            }
+          }
+          & a {
+            color: $--primary-btn;
+            text-decoration: underline;
+            transition: 0.3s linear;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+        &-price {
+          display: flex;
+          place-content: center start;
+          margin-bottom: 30px;
+          gap: 80px;
+          & span {
+            max-width: 150px;
+            line-height: 22px;
+            font-size: 16px;
+            & span {
+              font-size: 30px;
+              font-weight: 700;
+            }
+          }
+        }
+        &-book {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 30px;
+          margin-bottom: 30px;
+          & .btn {
+            max-width: 100%;
+          }
+        }
+        &-place {
+          display: flex;
+          gap: 10px;
+          place-content: center space-between;
+          & span {
+            max-width: 100%;
+            width: 100%;
+            padding: 5px 8px;
+            border: 1px solid $--primary-btn;
+            border-radius: 10px;
+            & span {
+              border: none;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
