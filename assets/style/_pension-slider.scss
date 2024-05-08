@@ -1,0 +1,50 @@
+.otherPensionSlider {
+  margin-bottom: 30px;
+  position: relative;
+  & .location__container-list-item {
+    &-link {
+      max-width: 100%;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      max-height: 280px;
+      & img {
+        width: 100%;
+      }
+    }
+  }
+  .otherPensionSlider-button-next,
+  .otherPensionSlider-button-prev {
+    position: absolute;
+    top: 50%;
+    width: 52px;
+    height: 52px;
+    background: url(../images/chevron-up-circle-svgrepo-com.svg) center center /
+      cover no-repeat;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    background-color: #fff;
+    border: 1px solid #c4b99e;
+    transition: 0.3s linear;
+    &:hover {
+      background: url(../images/chevron-up-circle-svgrepo-com-white.svg) center
+        center / cover no-repeat;
+      background-color: #c4b99e;
+    }
+  }
+  .otherPensionSlider-button-next {
+    right: 0;
+    left: inherit;
+    transform: rotate(-90deg);
+  }
+  .otherPensionSlider-button-prev {
+    bottom: inherit;
+    left: 0;
+    transform: rotate(90deg);
+  }
+  .otherPensionSlider-button-prev.swiper-button-disabled,
+  .otherPensionSlider-button-next.swiper-button-disabled {
+    opacity: 0.5; /* Прозорість */
+    cursor: not-allowed; /* Заборонений курсор */
+  }
+}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "PT Sans";
   src: url(../fonts/PTSans-Regular.ttf);
@@ -1118,6 +1119,7 @@ h2 {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
+  max-width: 100%;
 }
 @media screen and (max-width: 1023px) {
   .location__container-list-item-link img {
@@ -1779,6 +1781,11 @@ h2 {
   top: 0;
   transform: rotate(180deg);
 }
+.pension__container_info-slider .pensionSliderRight .pensionSliderRight-button-prev.swiper-button-disabled,
+.pension__container_info-slider .pensionSliderRight .pensionSliderRight-button-next.swiper-button-disabled {
+  opacity: 0.5; /* Прозорість */
+  cursor: not-allowed; /* Заборонений курсор */
+}
 .pension__container_info-descr {
   max-width: 100%;
   width: 100%;
@@ -2195,4 +2202,52 @@ h2 {
 .reviews-item-text {
   line-height: 22px;
   font-size: 16px;
+}
+
+.otherPensionSlider {
+  margin-bottom: 30px;
+  position: relative;
+}
+.otherPensionSlider .location__container-list-item-link {
+  max-width: 100%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  max-height: 280px;
+}
+.otherPensionSlider .location__container-list-item-link img {
+  width: 100%;
+}
+.otherPensionSlider .otherPensionSlider-button-next,
+.otherPensionSlider .otherPensionSlider-button-prev {
+  position: absolute;
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  background: url(../images/chevron-up-circle-svgrepo-com.svg) center center/cover no-repeat;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  background-color: #fff;
+  border: 1px solid #c4b99e;
+  transition: 0.3s linear;
+}
+.otherPensionSlider .otherPensionSlider-button-next:hover,
+.otherPensionSlider .otherPensionSlider-button-prev:hover {
+  background: url(../images/chevron-up-circle-svgrepo-com-white.svg) center center/cover no-repeat;
+  background-color: #c4b99e;
+}
+.otherPensionSlider .otherPensionSlider-button-next {
+  right: 0;
+  left: inherit;
+  transform: rotate(-90deg);
+}
+.otherPensionSlider .otherPensionSlider-button-prev {
+  bottom: inherit;
+  left: 0;
+  transform: rotate(90deg);
+}
+.otherPensionSlider .otherPensionSlider-button-prev.swiper-button-disabled,
+.otherPensionSlider .otherPensionSlider-button-next.swiper-button-disabled {
+  opacity: 0.5; /* Прозорість */
+  cursor: not-allowed; /* Заборонений курсор */
 }/*# sourceMappingURL=style.css.map */

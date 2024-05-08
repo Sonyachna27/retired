@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // скрипт для слайдера на странице пансионата
+  // скрипт для двойного слайдера на странице пансионата
   const pensionSliderWrap = document.querySelector(".pensionSlider");
   if (pensionSliderWrap) {
     const pensionSliderRight = new Swiper(".pensionSliderRight", {
@@ -69,6 +69,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
       thumbs: {
         swiper: pensionSliderRight,
+      },
+    });
+  }
+  // скрипт для  слайдера на странице пансионата
+  const otherPensionSliderWrap = document.querySelector(".otherPensionSlider");
+  if (otherPensionSliderWrap) {
+    const otherPensionSlider = new Swiper(".otherPensionSlider", {
+      spaceBetween: 20,
+      slidesPerView: 1,
+      freeMode: true,
+      watchSlidesProgress: true,
+      mousewheel: true,
+      navigation: {
+        nextEl: ".otherPensionSlider-button-next",
+        prevEl: ".otherPensionSlider-button-prev",
+      },
+
+      breakpoints: {
+        550: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
       },
     });
   }
