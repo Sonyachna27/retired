@@ -72,4 +72,45 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   }
+
+  // скрипт для відображення табів на сторінці пансіонатів
+
+  const serviceSinglePage = document.querySelector(".single__container-tabs");
+  if (serviceSinglePage) {
+    const servicesSingleTabs = document.querySelectorAll(
+      ".single__container-tabs-btn"
+    );
+    const servicesContentBlock = document.querySelectorAll(
+      ".single__container-tabs-content"
+    );
+
+    function showServicesContent(servicesContentName) {
+      servicesContentBlock.forEach((content) => {
+        let contentDataName = content.dataset.name;
+        if (contentDataName === servicesContentName) {
+          content.style.display = "block";
+        } else {
+          content.style.display = "none";
+        }
+      });
+    }
+
+    function activeServicesTabs() {
+      servicesSingleTabs.forEach((content) => {
+        let contentDataName = content.dataset.name;
+
+        content.addEventListener("click", () => {
+          servicesSingleTabs.forEach((t) => t.classList.remove("active-tab"));
+          content.classList.add("active-tab");
+          showServicesContent(contentDataName);
+        });
+
+        if (contentDataName === "description") {
+          showServicesContent(contentDataName);
+        }
+      });
+    }
+
+    activeServicesTabs();
+  }
 });
