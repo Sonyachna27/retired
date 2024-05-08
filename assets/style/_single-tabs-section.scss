@@ -1,5 +1,7 @@
 .single {
   &__container {
+    margin-bottom: 30px;
+
     &-tabs {
       display: flex;
       flex-direction: column;
@@ -8,9 +10,9 @@
       &-btns {
         display: flex;
         gap: 10px;
-        overflow: hidden;
+        overflow: auto;
         @media screen and (max-width: 550px) {
-          overflow-x: scroll;
+          overflow-x: auto;
         }
       }
       &-btn {
@@ -24,6 +26,9 @@
       &-content {
         margin-bottom: 30px;
       }
+    }
+    & .btn {
+      margin: 0 auto;
     }
   }
 }
