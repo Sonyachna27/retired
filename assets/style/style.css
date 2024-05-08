@@ -188,6 +188,16 @@ h2 {
   background-color: #9b78d7;
 }
 
+.white_btn {
+  background-color: transparent;
+  border: 1px solid rgb(250, 101, 49);
+  color: #333;
+}
+.white_btn:hover {
+  background-color: rgb(250, 101, 49);
+  color: #ffffff;
+}
+
 .title-row {
   display: flex;
   align-items: center;
@@ -1914,4 +1924,34 @@ h2 {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.single__container-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow: hidden;
+}
+.single__container-tabs-btns {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+}
+@media screen and (max-width: 550px) {
+  .single__container-tabs-btns {
+    overflow-x: scroll;
+  }
+}
+.single__container-tabs-btn {
+  white-space: nowrap;
+}
+@media screen and (max-width: 550px) {
+  .single__container-tabs-btn {
+    min-width: 50%;
+    width: 100%;
+    max-width: 70%;
+  }
+}
+.single__container-tabs-content {
+  margin-bottom: 30px;
 }/*# sourceMappingURL=style.css.map */
