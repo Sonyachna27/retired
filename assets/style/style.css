@@ -100,7 +100,6 @@ a {
   text-decoration: none;
   cursor: pointer;
   color: inherit;
-  display: block;
 }
 
 button {
@@ -182,7 +181,11 @@ h2 {
   transition: 0.3s linear;
 }
 .btn:hover {
-  background-color: #9B78D7;
+  background-color: #9b78d7;
+}
+
+.btn_hover {
+  background-color: #9b78d7;
 }
 
 .title-row {
@@ -195,7 +198,7 @@ h2 {
 .title-row a {
   display: block;
   font-size: 13px;
-  color: #9B78D7;
+  color: #9b78d7;
   line-height: 18px;
   font-style: normal;
 }
@@ -213,6 +216,26 @@ h2 {
   .p-m {
     padding: 40px 0;
   }
+}
+
+.breadcrumbs {
+  padding: 5px 0;
+  background-color: #f3f1ec;
+  color: #b0a48a;
+  margin-bottom: 30px;
+}
+.breadcrumbs__wrap {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.breadcrumbs a {
+  cursor: pointer;
+}
+.breadcrumbs img {
+  max-width: 18px;
+  width: 100%;
 }
 
 .search {
@@ -993,7 +1016,7 @@ h2 {
   }
 }
 .location__container-tags-tag-list a:hover {
-  background-color: #9B78D7;
+  background-color: #9b78d7;
   color: #ffffff;
 }
 .location__container-wrap {
@@ -1099,7 +1122,7 @@ h2 {
   line-height: 28px;
   font-weight: 700;
   text-transform: uppercase;
-  background-color: #9B78D7;
+  background-color: #9b78d7;
   color: #ffffff;
   border-radius: 8px 0 8px 0;
 }
@@ -1148,7 +1171,7 @@ h2 {
   margin-bottom: 10px;
 }
 .location__container-list-item-content a:not(:has(img)):not(.btn):hover {
-  color: #9B78D7;
+  color: #9b78d7;
   text-decoration: underline;
 }
 .location__container-list-item-content p {
@@ -1320,7 +1343,7 @@ h2 {
 }
 
 .reason {
-  background-color: #F8F9FB;
+  background-color: #f8f9fb;
   font-family: "Roboto";
 }
 .reason__container {
@@ -1380,7 +1403,7 @@ h2 {
   }
 }
 .reason__container-table table thead {
-  background-color: #9B78D7;
+  background-color: #9b78d7;
   width: auto;
   color: #ffffff;
 }
@@ -1391,7 +1414,7 @@ h2 {
 }
 
 .schedule {
-  background-color: #F8F9FB;
+  background-color: #f8f9fb;
   font-family: "Roboto";
 }
 .schedule__container-wrap {
@@ -1632,4 +1655,198 @@ h2 {
   color: #000000;
   line-height: 25px;
   margin-bottom: 16px;
+}
+
+.pension__container h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+.pension__container_info {
+  margin-bottom: 24px;
+  display: flex;
+  gap: 30px;
+}
+@media screen and (max-width: 1023px) {
+  .pension__container_info {
+    flex-direction: column;
+  }
+}
+.pension__container_info-slider {
+  display: flex;
+  gap: 20px;
+  height: auto;
+  max-width: 50%;
+  width: 100%;
+}
+@media screen and (max-width: 1023px) {
+  .pension__container_info-slider {
+    max-width: 100%;
+  }
+}
+.pension__container_info-slider .pensionSlider {
+  max-width: 437px;
+  height: 100%;
+  position: relative;
+}
+@media screen and (max-width: 1023px) {
+  .pension__container_info-slider .pensionSlider {
+    max-width: calc(100% - 25px - 25%);
+  }
+}
+.pension__container_info-slider .pensionSlider .swiper-slide {
+  border-radius: 10px;
+  cursor: pointer;
+  height: auto;
+}
+.pension__container_info-slider .pensionSlider .swiper-slide img {
+  border-radius: inherit;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.pension__container_info-slider .pensionSliderRight {
+  position: relative;
+  padding: 30px 0;
+  min-width: 16%;
+  width: 100%;
+  max-width: 25%;
+  flex-direction: column;
+}
+.pension__container_info-slider .pensionSliderRight .swiper-slide {
+  max-width: 100%;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  height: auto;
+  filter: blur(0.5px);
+}
+.pension__container_info-slider .pensionSliderRight .swiper-slide img {
+  max-width: 100%;
+  width: 100%;
+  border-radius: inherit;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.pension__container_info-slider .pensionSliderRight .pensionSliderRight-button-next,
+.pension__container_info-slider .pensionSliderRight .pensionSliderRight-button-prev {
+  position: absolute;
+  left: 35%;
+  width: 24px;
+  height: 24px;
+  background: url(../images/chevron-up-circle-svgrepo-com.svg) center center/cover no-repeat;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 2;
+  background-color: #fff;
+  border: 1px solid #c4b99e;
+  transition: 0.3s linear;
+}
+.pension__container_info-slider .pensionSliderRight .pensionSliderRight-button-next:hover,
+.pension__container_info-slider .pensionSliderRight .pensionSliderRight-button-prev:hover {
+  background: url(../images/chevron-up-circle-svgrepo-com-white.svg) center center/cover no-repeat;
+  background-color: #c4b99e;
+}
+.pension__container_info-slider .pensionSliderRight .pensionSliderRight-button-next {
+  bottom: 0;
+  top: inherit;
+}
+.pension__container_info-slider .pensionSliderRight .pensionSliderRight-button-prev {
+  bottom: inherit;
+  top: 0;
+  transform: rotate(180deg);
+}
+.pension__container_info-descr {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.pension__container_info-descr-address {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 10px;
+  background-color: rgb(248, 248, 248);
+  padding: 10px 40px 10px 10px;
+  color: #4f4f4f;
+  margin-bottom: 15px;
+}
+.pension__container_info-descr-address svg {
+  max-width: 24px;
+  min-width: 15px;
+  min-height: 24px;
+}
+.pension__container_info-descr-address span a:not([class]) {
+  color: rgb(250, 101, 49);
+  text-decoration: underline;
+  transition: 0.3s linear;
+}
+.pension__container_info-descr-address span a:not([class]):hover {
+  text-decoration: none;
+}
+.pension__container_info-descr-address-link {
+  color: #4f4f4f;
+  font-size: 24px;
+  line-height: 36px;
+}
+.pension__container_info-descr-rating {
+  display: flex;
+  gap: 10px;
+  place-items: center center;
+  margin-bottom: 15px;
+}
+.pension__container_info-descr-rating .stars svg {
+  max-width: 25px;
+  max-height: 25px;
+}
+.pension__container_info-descr-rating a {
+  color: rgb(250, 101, 49);
+  text-decoration: underline;
+  transition: 0.3s linear;
+}
+.pension__container_info-descr-rating a:hover {
+  text-decoration: none;
+}
+.pension__container_info-descr-price {
+  display: flex;
+  place-content: center start;
+  margin-bottom: 30px;
+  gap: 80px;
+}
+.pension__container_info-descr-price span {
+  max-width: 150px;
+  line-height: 22px;
+  font-size: 16px;
+}
+.pension__container_info-descr-price span span {
+  font-size: 30px;
+  font-weight: 700;
+}
+.pension__container_info-descr-book {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.pension__container_info-descr-book .btn {
+  max-width: 100%;
+}
+.pension__container_info-descr-place {
+  display: flex;
+  gap: 10px;
+  place-content: center space-between;
+}
+.pension__container_info-descr-place span {
+  max-width: 100%;
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid rgb(250, 101, 49);
+  border-radius: 10px;
+}
+.pension__container_info-descr-place span span {
+  border: none;
+  padding: 0;
 }/*# sourceMappingURL=style.css.map */
