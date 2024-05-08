@@ -1,0 +1,30 @@
+.reviews {
+  &-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 0;
+
+    &:not(:nth-last-of-type(1)) {
+      border-bottom: 1px solid #c4b99e;
+    }
+    &-autor {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      & img {
+        max-width: 40px;
+        max-height: 40px;
+        border-radius: 50px;
+      }
+      & span {
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+    &-text {
+      line-height: 22px;
+      font-size: 16px;
+    }
+  }
+}

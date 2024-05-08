@@ -248,6 +248,12 @@ h2 {
   width: 100%;
 }
 
+.primary-text {
+  padding: 30px 15px;
+  border-radius: 10px;
+  border: 1px solid #c4b99e;
+}
+
 .search {
   display: block;
   max-width: 275px;
@@ -1926,6 +1932,9 @@ h2 {
      object-fit: cover;
 }
 
+.single__container {
+  margin-bottom: 30px;
+}
 .single__container-tabs {
   display: flex;
   flex-direction: column;
@@ -1935,11 +1944,11 @@ h2 {
 .single__container-tabs-btns {
   display: flex;
   gap: 10px;
-  overflow: hidden;
+  overflow: auto;
 }
 @media screen and (max-width: 550px) {
   .single__container-tabs-btns {
-    overflow-x: scroll;
+    overflow-x: auto;
   }
 }
 .single__container-tabs-btn {
@@ -1954,4 +1963,232 @@ h2 {
 }
 .single__container-tabs-content {
   margin-bottom: 30px;
+}
+.single__container .btn {
+  margin: 0 auto;
+}
+
+.rooms {
+  margin-bottom: 30px;
+}
+.rooms h2 {
+  margin-bottom: 20px;
+}
+.rooms__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media screen and (max-width: 1023px) {
+  .rooms__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .rooms__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.rooms__container-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(250, 101, 49);
+  border-radius: 10px;
+  flex-grow: 1;
+  height: 100%;
+}
+.rooms__container-item h3 {
+  text-align: center;
+  font-size: 24px;
+  line-height: 30px;
+  padding: 15px 20px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  max-height: 100%;
+  justify-content: center;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.4;
+}
+.rooms__container-item img {
+  min-height: 175px;
+  height: auto;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+}
+@media screen and (max-width: 1023px) {
+  .rooms__container-item img {
+    max-height: 100%;
+  }
+}
+.rooms__container-item ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px 15px 15px 60px;
+  margin-bottom: auto;
+}
+.rooms__container-item ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.rooms__container-item ul li:before {
+  content: "";
+  position: absolute;
+  left: -35px;
+  transform: translate(0, -15%);
+  background: url(../images/galka.svg) center center/cover no-repeat;
+  width: 25px;
+  height: 25px;
+}
+.rooms__container .rooms__container-price {
+  display: flex;
+  flex-direction: column;
+}
+.rooms__container .rooms__container-price span {
+  padding: 0 15px 15px 35px;
+}
+.rooms__container .rooms__container-price span span {
+  padding: 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.pricing {
+  padding: 15px 15px 30px 15px;
+}
+.pricing h2 {
+  margin-bottom: 20px;
+}
+.pricing__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+.pricing__container-item {
+  width: calc(50% - 10px);
+  display: flex;
+  gap: 15px;
+  place-items: center start;
+}
+@media screen and (max-width: 768px) {
+  .pricing__container-item {
+    width: 100%;
+  }
+}
+.pricing__container-item img {
+  max-width: 100px;
+  min-width: 100px;
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+.pricing ul {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 25px;
+}
+.pricing .prising-table table {
+  max-width: 500px;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  border: 1px solid #c9bea5;
+  border-radius: 20px 20px 0 0px;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px #c9bea5;
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 550px) {
+  .pricing .prising-table table {
+    margin-left: 0;
+  }
+}
+.pricing .prising-table table thead {
+  background-color: rgb(248, 248, 248);
+  border-radius: 10px 10px 0 0;
+}
+.pricing .prising-table table thead tr {
+  border-radius: inherit;
+}
+.pricing .prising-table table thead tr td {
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 700;
+}
+.pricing .prising-table table thead tr td:nth-of-type(1) {
+  border-radius: 20px 0 0 0;
+}
+.pricing .prising-table table thead tr td:nth-last-of-type(1) {
+  border-radius: 0 20px 0 0;
+}
+.pricing .prising-table table tr {
+  border-bottom: 1px solid #c9bea5;
+}
+.pricing .prising-table table tr td {
+  padding: 10px;
+}
+.description-text {
+  font-size: 16px;
+}
+.description-text p:not(:nth-last-of-type(1)) {
+  margin-bottom: 20px;
+}
+.description-text ul {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style-position: inside;
+}
+.description-text ul li {
+  position: relative;
+}
+.description-text ul li:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 14px;
+  transform: translate(0, 15%);
+  background: url(../images/disc_list.svg) center center/cover no-repeat;
+}
+
+.reviews-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 25px 0;
+}
+.reviews-item:not(:nth-last-of-type(1)) {
+  border-bottom: 1px solid #c4b99e;
+}
+.reviews-item-autor {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.reviews-item-autor img {
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50px;
+}
+.reviews-item-autor span {
+  font-weight: 700;
+  font-size: 20px;
+}
+.reviews-item-text {
+  line-height: 22px;
+  font-size: 16px;
 }/*# sourceMappingURL=style.css.map */
