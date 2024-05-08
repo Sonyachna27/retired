@@ -35,12 +35,14 @@
           & .swiper-slide {
             border-radius: 10px;
             cursor: pointer;
-            height: 100%;
+            min-height: 100%;
+            aspect-ratio: 1 / 1;
 
             & img {
               border-radius: inherit;
-              height: 100%;
+              min-height: 100%;
               object-fit: cover;
+              aspect-ratio: 1 / 1;
             }
           }
         }
